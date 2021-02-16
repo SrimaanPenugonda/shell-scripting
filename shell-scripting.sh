@@ -26,3 +26,4 @@ echo -e "Today is $CURRENT_DATE"
 CURRENT_DATE=$(date +%T)
 echo -e "Current Time is $CURRENT_DATE"
 
+
