@@ -23,4 +23,6 @@ echo -e "\e[1;35mWelcome \e[37m$USER_NAME\e[0m"
 CURRENT_DATE=$(date +%F)
 
 echo -e "Today is $CURRENT_DATE"
+CURRENT_DATE=$(date +%T)
+echo -e "Current Time is $CURRENT_DATE"
 
