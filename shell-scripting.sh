@@ -13,3 +13,10 @@ echo -e "\n\e[31mSRIMAAN\e[0m"
 echo -e "\n\e[1;32mDHRUVAN\e[0m\n"
 
 echo -e "\n\e[33mHappy \e[4;35mUgadhi\e[0m\n"
+
+#Variable
+#USER = Srimaan
+USER = Srimaan
+
+echo -e "\e[1;35mWelcome \e[37m$USER\e[0m"
+
