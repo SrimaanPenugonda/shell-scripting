@@ -7,3 +7,5 @@
 echo hello world
 echo "hello world"
 echo -e "\nHello\n\n Welcome to Shell-Scripting\n\nRegards\nSrimaan"
+
+echo -e "\n\e[31mSRIMAAN\e[0m"
