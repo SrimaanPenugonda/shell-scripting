@@ -16,7 +16,7 @@ echo -e "\n\e[33mHappy \e[4;35mUgadhi\e[0m\n"
 
 #Variable
 #USER = Srimaan
-USER_NAME = Srimaan
+ USER_NAME=Srimaan
 
 echo -e "\e[1;35mWelcome \e[37m$USER_NAME\e[0m"
 
