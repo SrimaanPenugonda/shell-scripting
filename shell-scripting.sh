@@ -6,4 +6,4 @@
 
 echo hello world
 echo "hello world"
-echo -e "Hello\n\n Welcome to Shell-Scripting\n\nRegards\nSrimaan"
+echo -e "\nHello\n\n Welcome to Shell-Scripting\n\nRegards\nSrimaan"
