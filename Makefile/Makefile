@@ -1,4 +1,7 @@
 frontend:
 	 @echo "Installing Frontend"
-Mongo:
+mongo:
 	 @echo "Installing Mongo"
+
+user:
+	 @echo "Installing User"
