@@ -1,2 +1,2 @@
 frontend:
-	 @sh components/Makefile
+	 @sh components/frontend.sh
