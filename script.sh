@@ -15,3 +15,11 @@ case $1 in
 esac
 
 echo -e "\e[31mNumber of Arguments:\e[0m$#"
+#Function
+
+sample(){
+  echo a=$1
+  echo b=$2
+}
+
+sample 25 35
