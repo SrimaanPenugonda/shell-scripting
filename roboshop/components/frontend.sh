@@ -1,4 +1,8 @@
 #!/bin/bash
 
 COMPONENT=frontend
-echo -e "[\e[1;33mINFO\e[0m] [\e[1;34m${COMPONENT}\e[0m] [\e[1;35m$(date +%F:%T)\e[0m]"
+source components/common.sh
+
+INFO "Setup Frontend Service"
+INFO "Installing NGINX"
+yum install nginx -y &>>$Log_File
