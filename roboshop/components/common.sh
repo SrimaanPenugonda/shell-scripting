@@ -12,7 +12,13 @@ SUCC(){
 
 FAIL(){
   echo -e "[\e[1;33mFAIL\e[0m] [\e[1;34m${COMPONENT}\e[0m] [\e[1;35m$(date +%F:%T)\e[0m] $1"
+  echo -e "[\n\e[1;31mRefer logs in : $LOG_FILE for error\e[0m"
   exit 1
+}
+
+DOWNLOAD_ARTIFACTS(){
+  curl -o -L /tmp/${COMPONENT}.zip $1 &>>$Log_File
+  STAT $? "Artifact Download"
 }
 
 STAT(){   # To validate exit status of above operation
