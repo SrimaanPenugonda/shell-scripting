@@ -18,7 +18,7 @@ FAIL(){
 STAT(){   # To validate exit status of above operation
   case $1 in
   0)
-    SUCC $2
+    SUCC "$2"
     ;;
   *)
     FAIL "$2"
