@@ -20,4 +20,4 @@ STAT(){   # To validate exit status of above operation
     echo "Failure"
     exit 1
    ;;
-}
+   esac }
