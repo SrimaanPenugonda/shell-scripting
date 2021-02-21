@@ -1,6 +1,7 @@
 #Common Script for RoboShop Project ,It can be used by all componets/services
 
 Log_File=/tmp/roboshop.log #All Logs can check here
+rm -f $LOG_FILE #remove old logfile if exits
 
 INFO(){
   echo -e "[\e[1;33mINFO\e[0m] [\e[1;34m${COMPONENT}\e[0m] [\e[1;35m$(date +%F:%T)\e[0m] $1"
@@ -16,8 +17,8 @@ FAIL(){
   exit 1
 }
 
-DOWNLOAD_ARTIFACTS(){
-  curl -o -s -L /tmp/${COMPONENT}.zip $1 &>>$Log_File
+DOWNLOAD_ARTIFACTS() {
+  curl -s -L -o /tmp/${COMPONENT}.zip $1 &>>$LOG_FILE
   STAT $? "Artifact Download"
 }
 
