@@ -18,9 +18,13 @@ INFO "Install Mongodb"
 yum install mongodb-org -y &>>$Log_File
 STAT $? "Mongodb Installation"
 
-INFO "Update mongodb configuration \e[34mmongo.conf\e[0m file with 0.0.0.0"
+INFO "Update mongodb configuration \e[34mmongod.conf\e[0m file with 0.0.0.0"
+if [ -f /etc/mongod.conf ]; then
 sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>$Log_File
 STAT $? "mongodb configuration update"
+else
+STAT 1 "mongod.conf file missing"
+fi
 
 INFO "Restart MongoDB"
 systemctl enable mongod &>>$Log_File
