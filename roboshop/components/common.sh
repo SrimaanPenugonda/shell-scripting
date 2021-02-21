@@ -10,14 +10,17 @@ SUCC(){
   echo -e "[\e[1;33mSUCCESS\e[0m] [\e[1;34m${COMPONENT}\e[0m] [\e[1;35m$(date +%F:%T)\e[0m] $1"
 }
 
+FAIL(){
+  echo -e "[\e[1;33mFAIL\e[0m] [\e[1;34m${COMPONENT}\e[0m] [\e[1;35m$(date +%F:%T)\e[0m] $1"
+  exit 1
+}
+
 STAT(){   # To validate exit status of above operation
   case $1 in
   0)
     SUCC $2
-    echo "Success"
     ;;
   *)
-    echo "Failure"
-    exit 1
+    FAIL "$2"
    ;;
    esac }
