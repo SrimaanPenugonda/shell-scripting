@@ -17,7 +17,7 @@ FAIL(){
 }
 
 DOWNLOAD_ARTIFACTS(){
-  curl -o -s /tmp/${COMPONENT}.zip $1 &>>$Log_File
+  curl -o -s -L /tmp/${COMPONENT}.zip $1 &>>$Log_File
   STAT $? "Artifact Download"
 }
 
