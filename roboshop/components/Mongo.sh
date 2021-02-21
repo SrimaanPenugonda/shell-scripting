@@ -19,7 +19,7 @@ yum install mongodb-org -y &>>$Log_File
 STAT $? "Mongodb Installation"
 
 INFO "Update mongodb configuration \e[34mmongo.conf\e[0m file with 0.0.0.0"
-sed -i 's/127.0.0.1/0.0.0.0' /etc/mongod.conf
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 STAT $? "mongodb configuration update"
 
 INFO "Restart MongoDB"
