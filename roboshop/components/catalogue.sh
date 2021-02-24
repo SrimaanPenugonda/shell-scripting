@@ -8,7 +8,8 @@ INFO " Install NodeJS"
 yum install nodejs make gcc-c++ -y &>>$Log_File
 STAT $? "NodeJS Installation"
 
-id roboshop $>>$Log_File
+INFO "Application user creation"
+id roboshop &>>$Log_File
 case $? in
   0)
     STAT 0 "Application User exits"
