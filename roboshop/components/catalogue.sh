@@ -15,7 +15,7 @@ case $? in
     ;;
   1)
     useradd roboshop &>>$Log_File
-    STAT 1 "Application User Created"
+    STAT $? "Application User Created"
     ;;
 esac
 
