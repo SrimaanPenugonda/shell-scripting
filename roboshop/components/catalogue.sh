@@ -34,8 +34,10 @@ STAT $? "NodeJS Dependencies Installation"
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R #change group and user to roboshop
 # now this path will change to roboshop user
 INFO "Update systemd.service configuration"
-sed -e "s/MONGO_DNSNAME/172.31.78.177/" /home/roboshop/${COMPONENT}/systemd.service &>>$Log_File
+sed -i -e "s/MONGO_DNSNAME/172.31.78.177/" /home/roboshop/${COMPONENT}/systemd.service &>>$Log_File
 STAT $? "MONGO_DNSNAME updated"
+
+
 INFO "Setup Systemd Service for Catalogue"
 mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service &>>$Log_File
 INFO "Load the Service to system"
