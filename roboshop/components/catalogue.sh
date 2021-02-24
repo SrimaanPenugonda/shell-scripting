@@ -39,7 +39,7 @@ STAT $? "MONGO_DNSNAME updated"
 INFO "Setup Systemd Service for Catalogue"
 mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service &>>$Log_File
 INFO "Load the Service to system"
-systemctl deamon-reload &>>$Log_File
+systemctl daemon-reload &>>$Log_File
 STAT $? "Catalogue Systemd loaded"
 
 INFO  "Start Catalogue Service"
