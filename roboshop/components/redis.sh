@@ -6,10 +6,12 @@ source components/common.sh
 
 INFO "Setup Redis Component"
 
-INFO "Setup REDIS repos"
+INFO "Setup REDIS Yum repos"
 yum install epel-release yum-utils -y &>>$Log_File
 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y &>>$Log_File
 yum-config-manager --enable remi &>>$Log_File
+STAT $? "Yum repos configured"
+
 INFO "Install Redis"
 yum install redis -y &>>$Log_File
 STAT $? "Redis Installation"
