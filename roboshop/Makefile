@@ -12,3 +12,5 @@ user: common
 	 @sh components/user.sh
 mysql: common
 	 @sh components/mysql.sh
+cart: common
+	 @sh components/cart.sh
