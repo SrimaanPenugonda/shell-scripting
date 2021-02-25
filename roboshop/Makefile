@@ -10,3 +10,5 @@ redis: common
 	 @sh components/redis.sh
 user: common
 	 @sh components/user.sh
+mysql: common
+	 @sh components/mysql.sh
