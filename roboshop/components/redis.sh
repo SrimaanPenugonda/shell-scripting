@@ -21,7 +21,7 @@ if [ -f /etc/redis.conf ]; then
   sed -i -e "s/127.0.0.1/0.0.0.0/" /etc/redis.conf &>>$Log_File
   STAT $? "redis conf file update"
   sed -i -e "s/127.0.0.1/0.0.0.0/" /etc/redis/redis.conf &>>$Log_File
-  echo "Another redis conf file update"
+  echo "Another redis conf /etc/redis/redis.conf file update"
 else
   STAT 1 "redis.conf file missing"
 fi
