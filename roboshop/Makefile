@@ -14,3 +14,10 @@ mysql: common
 	 @sh components/mysql.sh
 cart: common
 	 @sh components/cart.sh
+shipping: common
+	 @ssh components/shipping.sh
+rabbitmq: common
+	 @ssh components/rabbitmq.sh
+payment: common
+	 @ssh components/payment.sh
+
