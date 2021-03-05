@@ -14,7 +14,8 @@ case $1 in
         echo "updating routes"
         for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis;do
           echo "create A record for ${component}"
-          IP=$(aws ec2 describe-instances --filter Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq '.Reservations[].Instances[].PrivateIpAddress')
+          IP=$(aws ec2 describe-instances --filter Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq \
+          '.Reservations[].Instances[].PrivateIpAddress')
           sed -e "s/COMPONENT/${component}/" -e "s/IPADDRESS/${IP}/" record.json >/tmp/${component}.json
           aws route53 change-resource-record-sets --hosted-zone-id Z054832619MOTOCO0ITHS --change-batch file:///tmp/${component}.json
           done
