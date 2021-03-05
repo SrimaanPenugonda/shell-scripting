@@ -30,8 +30,8 @@ unzip -o /tmp/${COMPONENT}.zip &>>$Log_File
 STAT $? "Artifacts Unzip Completed"
 
 INFO "Compile Shipping Application"
-mvn clean package  &>>$LOG_FILE
-mv target/shipping-1.0.jar shipping.jar  &>>$LOG_FILE
+mvn clean package  &>>$Log_File
+mv target/shipping-1.0.jar shipping.jar  &>>$Log_File
 STAT $? "Shipping Compile"
 
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
