@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INFO "Launch EC2 Instances"
+echo "Launch EC2 Instances"
 
 case $1 in
       launch)
@@ -11,7 +11,7 @@ case $1 in
         done
       ;;
       routes)
-        INFO "updating routes"
+        echo "updating routes"
         for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis;do
           echo "create A record for ${component}"
           IP=$(aws describe-instances --filter Name=tag:Name,Value=${component} Name=instance-state-name,Value=running | jq \
