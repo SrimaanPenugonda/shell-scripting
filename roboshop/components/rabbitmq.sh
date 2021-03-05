@@ -9,7 +9,7 @@ INFO "Install ErLang"
 yum list esl-erlang &>>$Log_File
 case $? in
   0)
-    STAT 0 "ErLang Installation"
+    STAT 0 "ErLang already installed"
     ;;
   1)
     yum install https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.1-1~centos~7_amd64.rpm -y &>>$Log_File
@@ -27,7 +27,7 @@ STAT $? "RabbitMQ server Install"
 
 INFO "Start RabbitMQ Service"
 systemctl enable rabbitmq-server  &>>$Log_File
-systemctl start rabbitmq-server &>>$Log_File
+systemctl restart rabbitmq-server &>>$Log_File
 STAT $? "Start RabbitMQ Service"
 
 INFO "Create RoboShop App User in RabbitMQ"
