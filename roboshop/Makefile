@@ -15,9 +15,9 @@ mysql: common
 cart: common
 	 @sh components/cart.sh
 shipping: common
-	 @ssh components/shipping.sh
+	 @sh components/shipping.sh
 rabbitmq: common
-	 @ssh components/rabbitmq.sh
+	 @sh components/rabbitmq.sh
 payment: common
-	 @ssh components/payment.sh
+	 @sh components/payment.sh
 
