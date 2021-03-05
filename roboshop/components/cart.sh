@@ -34,7 +34,7 @@ STAT $? "NodeJS Dependencies Installation"
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R #change group and user to roboshop
 # now this path will change to roboshop user
 INFO "Update systemd.service configuration"
-sed -i -e "s/CATALOGUE_ENDPOINT/172.31.70.147/" -e "s/REDIS_ENDPOINT/172.31.69.97/" /home/roboshop/${COMPONENT}/systemd.service &>>$Log_File
+sed -i -e "s/CATALOGUE_ENDPOINT/catalogue-test.devopssri.ml/" -e "s/REDIS_ENDPOINT/redis-test.devopssri.ml/" /home/roboshop/${COMPONENT}/systemd.service &>>$Log_File
 STAT $? "CATALOGUE_ENDPOINT,REDIS_ENDPOINT updated"
 
 
