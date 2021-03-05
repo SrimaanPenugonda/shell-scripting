@@ -4,7 +4,7 @@
   "Changes": [{
     "Action": "UPSERT",
     "ResourceRecordSet": {
-      "Name": "COMPONENT-test.devopsb53.tk",
+      "Name": "COMPONENT-test.devopssri.ml",
       "Type": "A",
       "TTL": 300,
       "ResourceRecords": [{ "Value": IPADDRESS}]
