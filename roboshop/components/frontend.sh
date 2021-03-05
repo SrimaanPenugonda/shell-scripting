@@ -23,6 +23,12 @@ STAT $? "Artifacts Extract"
 
 INFO "Update Nginx Configuration"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
+sed -i  -e "/catalogue/ s/localhost/catalogue-dev.devopsb53.tk/" \
+        -e "/cart/ s/localhost/cart-dev.devopsb53.tk/" \
+        -e "/user/ s/localhost/user-dev.devopsb53.tk/" \
+        -e "/shipping/ s/localhost/shipping-dev.devopsb53.tk/" \
+        -e "/payment/ s/localhost/payment-dev.devopsb53.tk/" \
+        /etc/nginx/default.d/roboshop.conf
 STAT $? "Nginx configuration update"
 
 INFO "Nginx Restart"
