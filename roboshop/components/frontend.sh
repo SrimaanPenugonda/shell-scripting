@@ -22,7 +22,7 @@ mv static/* .
 STAT $? "Artifacts Extract"
 
 INFO "Update Nginx Configuration"
-mv localhost.conf /etc/nginx/default.d/roboshop.conf
+cp localhost.conf /etc/nginx/default.d/roboshop.conf
 sed -i  -e "/catalogue/ s/localhost/catalogue-test.devopssri.ml/" \
         -e "/cart/ s/localhost/cart-test.devopssri.ml/" \
         -e "/user/ s/localhost/user-test.devopssri.ml/" \
