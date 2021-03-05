@@ -34,4 +34,4 @@ INFO "Create RoboShop App User in RabbitMQ"
 rabbitmqctl add_user roboshop roboshop123 &>>$Log_File
 rabbitmqctl set_user_tags roboshop administrator &>>$Log_File
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>$Log_File #read,write,execute permissions
-STAT $? "RoboShop App USer create"
+STAT $? "RoboShop App User create"
