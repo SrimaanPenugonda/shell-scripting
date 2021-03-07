@@ -27,7 +27,7 @@ case $1 in
           echo "terminating ${component} instance"
           aws ec2 terminate-instances --instance-ids  $(aws ec2 describe-instances --filters \
           Name=tag:Name,Values=${component} \
-           --query 'Reservations[].Instances[].InstanceId'
+          --query 'Reservations[].Instances[].InstanceId'
         done
         ;;
 esac
