@@ -22,13 +22,13 @@ case $1 in
           done
         ;;
       terminate)
-        echo "terminating instances "
+        echo "terminating instances"
         for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis;do
           echo "terminating ${component} instance"
           aws ec2 terminate-instances --instance-ids  $(aws ec2 describe-instances --filters \
           Name=tag:Name,Values=${component} \
-          --query 'Reservations[].Instances[].InstanceId'
-        done
+          --query 'Reservations[].Instances[].InstanceId')
+         done
         ;;
 esac
 
