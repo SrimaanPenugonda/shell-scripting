@@ -4,6 +4,7 @@ echo "Launch EC2 Instances"
 
 case $1 in
       launch)
+        echo "launching 10 instances"
         for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis;do
          echo "Launch ${component} spot instance"
          aws ec2 run-instances --launch-template LaunchTemplateId=lt-06422ac4f94f18990 --tag-specifications \
@@ -14,11 +15,20 @@ case $1 in
         echo "updating routes"
         for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis;do
           echo "create A record for ${component}"
-          IP=$(aws ec2 describe-instances --filter Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq \
+          IP=$(aws ec2 describe-instances --filters Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq \
           '.Reservations[].Instances[].PrivateIpAddress')
           sed -e "s/COMPONENT/${component}/" -e "s/IPADDRESS/${IP}/" record.json >/tmp/${component}.json
           aws route53 change-resource-record-sets --hosted-zone-id Z054832619MOTOCO0ITHS --change-batch file:///tmp/${component}.json
           done
+        ;;
+      terminate)
+        echo "terminating instances "
+        for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis;do
+          echo "terminating ${component} instance"
+          aws ec2 terminate-instances --instance-ids  $(aws ec2 describe-instances --filters \
+          Name=tag:Name,Values=${component} \
+           --query 'Reservations[].Instances[].InstanceId'
+        done
         ;;
 esac
 
