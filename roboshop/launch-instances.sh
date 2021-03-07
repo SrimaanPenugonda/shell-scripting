@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Launch EC2 Instances"
+echo "Manging Roboshop servers"
 
 case $1 in
       launch)
@@ -27,7 +27,7 @@ case $1 in
           echo "terminating ${component} instance"
           aws ec2 terminate-instances --instance-ids  $(aws ec2 describe-instances --filters \
           Name=tag:Name,Values=${component} \
-          --query 'Reservations[].Instances[].InstanceId')
+          --query 'Reservations[].Instances[].InstanceId' --output text)
          done
         ;;
 esac
