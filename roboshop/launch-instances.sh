@@ -7,7 +7,7 @@ case $1 in
         echo "launching 10 instances"
         for component in frontend catalogue cart user shipping payment mysql mongo rabbitmq redis;do
          echo "Launch ${component} spot instance"
-         aws ec2 run-instances --launch-template LaunchTemplateId=lt-0cee81be8f71253e8 --tag-specifications \
+         aws ec2 run-instances --launch-template LaunchTemplateId=lt-0abcc8f4257b802e3 --tag-specifications \
          "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]" &>>/tmp/instanceslaunch_log
         done
       ;;
