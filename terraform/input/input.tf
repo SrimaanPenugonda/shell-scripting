@@ -23,3 +23,7 @@ variable "abc2" {}
 output "abc2" {
   value = var.abc2
 }
+variable "abc3" {}
+output "abc3" {
+  value = var.abc3
+}
