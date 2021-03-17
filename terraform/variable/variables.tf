@@ -42,3 +42,6 @@ output "COURSE_NAME" {
 output "TRAINER" {
   value = var.map["trainer"]
 }
+output "STUDENT" {
+  value = var.map["student"]
+}
