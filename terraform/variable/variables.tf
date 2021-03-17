@@ -49,5 +49,5 @@ output "STUDENT" {
 //terraform doesn't support single quotes '  '
 
 output "COURSE" {
-  value = "Welcome to ${var.map["course_name"]} training,Trainer is ${var.map["trainer"]},student is ${var.map["student"]}"
+  value = "Welcome to ${var.map["course_name"]} training,Trainer is: ${var.map["trainer"]},student is: ${var.map["student"]}"
 }
