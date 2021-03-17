@@ -23,3 +23,6 @@ output "list_1" {
 output "list_2" {
   value = var.list[2]
 }
+output "list" {
+  value = var.list
+}
