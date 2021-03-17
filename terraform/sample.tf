@@ -1,5 +1,5 @@
 output "a" {
-  value = "100"
+  value = 100
 }  // equivalant to echo a=100
 
 
