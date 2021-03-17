@@ -6,7 +6,7 @@ output "b" {
   value = "String"
 }
 output "c" {
-  value = True
+  value = true
 }
 
 
