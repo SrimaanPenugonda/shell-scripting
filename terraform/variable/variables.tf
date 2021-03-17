@@ -25,4 +25,4 @@ output "list_2" {
 }
 output "list" {
   value = var.list
-}
+} //to print full list
