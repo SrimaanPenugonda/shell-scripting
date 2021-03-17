@@ -16,7 +16,9 @@ variable "b" {
 variable "list"{
   default = [100,"abcd",true]
 } // list will have diff data types
+
 //to access list of variables
+
 output "list_1" {
   value = var.list[1]
 }
@@ -34,7 +36,9 @@ variable "map" {
     student = "srimaan"
   }
 }
-
 output "COURSE_NAME" {
   value = var.map["course_name"]
+}
+output "TRAINER" {
+  value = var.map["trainer"]
 }
