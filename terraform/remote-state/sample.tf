@@ -5,15 +5,6 @@ resource "aws_instance" "sample" {
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]  //give security group name name here
 }
-//create bucket
-resource "aws_s3_bucket" "b" {
-  bucket = "srimaan_s3_1"
-  acl = "private"
-
-  versioning {
-    enabled = true
-  }
-}
 
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
