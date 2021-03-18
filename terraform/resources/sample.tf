@@ -1,15 +1,5 @@
-output "a" {
-  value = 100
-}  // equivalant to echo a=100
-
-output "b" {
-  value = "String"
-}
-output "c" {
-  value = true
-}
-
-
+//resources..
+//        resource name  local name
 resource "aws_instance" "sample" {
   ami           = "ami-052ed3344670027b3"
   instance_type = "t3.micro"
@@ -40,3 +30,8 @@ resource "aws_security_group" "allow_ssh" {
     Name = "allow_ssh"
   }
 }
+//terraform apply - it first creates security grp
+//what happens if we run terraform apply multiple time - it WONT create multiple instances
+//why - terraform create state file- which stores the info of resources created , so when apply multiple times it
+//cross check the resource
+//
