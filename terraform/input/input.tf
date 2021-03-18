@@ -18,7 +18,7 @@ variable "abc1" {}
 output "abc1" {
   value = var.abc1
 }
-//3.pass variable from file
+//3.pass variable from file ,auto.tfvars,terraform.tfvars,ENV variable TF_VAR_abc
 variable "abc2" {}
 output "abc2" {
   value = var.abc2
