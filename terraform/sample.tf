@@ -13,6 +13,7 @@ output "c" {
 resource "aws_instance" "sample" {
   ami           = "ami-052ed3344670027b3"
   instance_type = "t3.micro"
+  vpc_security_group_ids = [aws_security_group.allow_ssh.id]  //give security group name name here
 }
 
 
