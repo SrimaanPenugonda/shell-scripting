@@ -1,7 +1,7 @@
 //to declare a variable
 variable "abc" {
   type = number  // it expects number only
-} // empty variable declaration with out any default value , mention the datatype 'type'
+} // empty variable declaration with out any default value , mention the datatype in 'type'
 
 //1.to access this variable over CLI
 output "abc" {
