@@ -6,7 +6,7 @@ resource "aws_instance" "sample" {
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]  //give security group name name here
 }
 
-
+//create security group
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow ssh inbound traffic"
