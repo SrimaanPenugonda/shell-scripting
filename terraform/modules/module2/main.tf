@@ -4,3 +4,7 @@ resource "aws_instance" "sample" {
   ami           = "ami-052ed3344670027b3" // AMI Devops-Practice
   instance_type = "t3.micro"
 }
+
+output "PUBLIC_IP" {
+  value = aws_instance.sample.public_ip
+}
