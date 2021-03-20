@@ -14,4 +14,4 @@ provider "aws" {
 //access the public ip from sub module
 output "PUBLIC_IP" {
   value = module.module2.PUBLIC_IP //access the public ip from module2
-}
+} //- this public ip can be shared to module1 also

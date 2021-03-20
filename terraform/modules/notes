@@ -1,3 +1,4 @@
 #ROOT MODULE module
 #SUB MODULE  module1 and module2
 - output wont print any data in sub module rather pass the output to ROOT module
+- you can not share the info between submodules - this can be done via root module only
