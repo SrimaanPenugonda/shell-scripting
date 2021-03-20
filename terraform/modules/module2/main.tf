@@ -7,4 +7,4 @@ resource "aws_instance" "sample" {
 
 output "PUBLIC_IP" {
   value = aws_instance.sample.public_ip
-}
+} // this output wont print rather pass to root module

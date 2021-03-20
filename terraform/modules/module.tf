@@ -10,3 +10,8 @@ module "module2" {
 provider "aws" {
   region = "us-east-1"
 }
+
+//access the public ip from sub module
+output "PUBLIC_IP" {
+  value = module.module2.PUBLIC_IP //access the public ip from module2
+}
