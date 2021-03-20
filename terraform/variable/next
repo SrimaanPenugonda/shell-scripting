@@ -1,0 +1,6 @@
+#Vaiable PRECEDENCE
+- -var ,-var-file
+- *auto.tfvars
+- *terraform.tfvars
+-SHELL ENV Variables - TF_VAR_NAME
+
