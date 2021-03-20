@@ -1,5 +1,6 @@
 module "module1" {
-  source = "./module1"
+  source         = "./module1"
+  INSTANCE_TYPE  = "t3.micro"  // pass the info to sub module
 } //calling the module1
 
 module "module2" {
