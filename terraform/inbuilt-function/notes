@@ -1,4 +1,4 @@
-//functions are inbulit , we can not create user functions in terraform
+//functions are inbuilt , we can not create user functions in terraform
  -Convert to UpperCase
  -Cut a String
  -length
