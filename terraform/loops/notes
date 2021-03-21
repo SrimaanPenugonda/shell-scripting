@@ -7,7 +7,7 @@ resource "aws_instance" "sample" {
   count            = 3
   ami              = var.AMI[count.index]
   instance_type    = var.INSTANCE_TYPE[count.index]
-} //it iterate 2 times ,count offers index-can be referred as count.index
+} //it iterate 3 times ,count offers index-can be referred as count.index
 //index starts from 0
 //starting from terraform 0.13 v count is available for module also
 
