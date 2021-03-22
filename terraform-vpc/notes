@@ -1,0 +1,26 @@
+created self hosted agent - followed steps in azure doc
+and configured that to workstation linux machine - centos
+
+myagent - dir will be created
+run - sh svc.sh install
+      sh svc.sh start
+this will start the self agent
+
+now create pipeline and add agent job using self hosted one (default) which has our agent in agent pool
+
+now link the gihub repos into artifacts - click on edit pipeline -add arttifact - link the github and give repo
+
+now add required tasks to agent job
+1 . terraform
+2. bash - where we give our bash commands
+    make dev-init
+    make dev-apply etc
+
+3.azure has to link our aws configure - aws creditionals
+    create a variable library
+        give AWS_ACCESS_KEY_ID
+             AWS_SECRET_ACCESS_KEY
+4. now linke these variables to our pipeline for all releases
+5.under bash env varibale willbe there pass above variables here $(AWS_ACCESS_KEY_ID) and $(AWS_SECRET_ACCESS_KEY)
+Finally pipeline link to our aws using creditionals
+now create a release
