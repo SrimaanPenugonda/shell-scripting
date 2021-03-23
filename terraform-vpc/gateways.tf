@@ -6,3 +6,22 @@ resource "aws_internet_gateway" "igw" {
     Provisioned         = "Terraform"
   }
 }
+
+resource "aws_eip" "ngw" {
+  vpc                   = true
+  tags                  = {
+    Name                = "${var.PROJECT_NAME}-${var.ENV}-ngw-ip"
+    Environment         = var.ENV
+    Provisioned         = "Terraform"
+  }
+}
+
+resource "aws_nat_gateway" "ngw" {
+  allocation_id         = aws_eip.ngw.id
+  subnet_id             = aws_subnet.public-subnets.*.id[0]
+  tags                  = {
+    Name                = "${var.PROJECT_NAME}-${var.ENV}-ngw"
+    Environment         = var.ENV
+    Provisioned         = "Terraform"
+  }
+}
