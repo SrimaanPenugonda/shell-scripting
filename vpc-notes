@@ -24,5 +24,6 @@ now add required tasks to agent job
 5.under bash env varibale willbe there pass above variables here $(AWS_ACCESS_KEY_ID) and $(AWS_SECRET_ACCESS_KEY)
 Finally pipeline link to our aws using creditionals
 now create a release
-5.create vpc and subnets
-
+5.create vpc and subnets(2public and 2 private)
+6.create internet gateway and nat gateway
+7.nat gateway requires EIP elastic ip address
